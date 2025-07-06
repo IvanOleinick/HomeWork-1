@@ -8,6 +8,7 @@ import friend7 from "../assets/friend7.jpg";
 import friend8 from "../assets/friend8.jpg";
 import friend9 from "../assets/friend9.jpg";
 
+export const baseUrl='https://sw-info-api.herokuapp.com'
 export const arrayImages = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 export const navItems = ['Home', 'About me', 'Star Wars', 'Contact'];
 export const openingCrawl = `It is a period of civil war.
