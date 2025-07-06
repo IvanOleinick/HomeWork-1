@@ -11,7 +11,7 @@ const DreamTeam = () => {
                 if (index === 6) extraClass = "bottomLeft";
                 if (index === 8) extraClass = "bottomRight";
 
-                return <Friends friend={item} className={extraClass} key={index} />;
+                return <Friends friend={item} className={extraClass} key={index}/>;
             })}
         </section>
     );
