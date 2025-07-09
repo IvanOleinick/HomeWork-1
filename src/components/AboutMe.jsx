@@ -37,8 +37,8 @@ const AboutMe = () => {
                     if (key === "image") return null;
 
                     const label = key
-                        .replace(/_/g, ' ')                     // заменяем "_" на пробел
-                        .replace(/^\w/, c => c.toUpperCase()); // первая буква заглавная
+                        .replace(/_/g, ' ')
+                        .replace(/^\w/, c => c.toUpperCase());
 
                     return (
                         <p key={key}>
