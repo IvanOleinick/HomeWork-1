@@ -1,23 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { baseUrl, id_person, tag_base, tag_peoples } from "../utils/constants.js";
+import { saveData, loadCachedData } from "../utils/constants.js";
 
 const AboutMe = () => {
     const [aboutMe, setAboutMe] = useState(null);
+    const STORAGE_KEY = 'aboutMe';
 
     useEffect(() => {
+        const cached = localStorage.getItem(STORAGE_KEY);
+        if (cached) {
+            const data = loadCachedData(STORAGE_KEY);
+            if (data) {
+                setAboutMe(data);
+                return;
+            }
+        }
+
         fetch(`${baseUrl}/${tag_base}/${tag_peoples}/${id_person}`)
             .then(res => res.json())
-            .then(data => setAboutMe({
-                name: data.name,
-                gender: data.gender,
-                skin_color: data.skin_color,
-                hair_color: data.hair_color,
-                eye_color: data.eye_color,
-                height: data.height,
-                mass: data.mass,
-                birth_year: data.birth_year,
-                image: data.image,
-            }))
+            .then(data => {
+                const person = {
+                    name: data.name,
+                    gender: data.gender,
+                    skin_color: data.skin_color,
+                    hair_color: data.hair_color,
+                    eye_color: data.eye_color,
+                    height: data.height,
+                    mass: data.mass,
+                    birth_year: data.birth_year,
+                    image: data.image,
+                };
+
+                setAboutMe(person);
+                saveData(STORAGE_KEY, person, 30);
+            })
             .catch(err => console.error(err));
     }, []);
 
