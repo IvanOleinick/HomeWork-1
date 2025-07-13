@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { baseUrl, id_person, tag_base, tag_peoples } from "../utils/constants.js";
-import { saveData, loadCachedData } from "../utils/constants.js";
+import React, {useState, useEffect} from 'react';
+import {baseUrl, id_person, tag_base, tag_peoples} from "../utils/constants.js";
+import {saveData, loadCachedData} from "../utils/constants.js";
 
 const AboutMe = () => {
     const [aboutMe, setAboutMe] = useState(null);
@@ -64,7 +64,7 @@ const AboutMe = () => {
                 })}
             </div>
 
-            <img className="w-50" src={`/${aboutMe.image}`} alt={aboutMe.name} />
+            <img className="w-50" src={`/${aboutMe.image}`} alt={aboutMe.name}/>
         </div>
     );
 };

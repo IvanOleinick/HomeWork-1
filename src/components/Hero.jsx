@@ -1,4 +1,4 @@
-import hero from "../../public/luke_skywalker.jpg";
+import hero from "/luke_skywalker.jpg";
 
 const Hero = () => {
     return (
