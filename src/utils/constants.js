@@ -50,8 +50,8 @@ export function saveData(key, value, days) {
 }
 
 export function loadCachedData(key) {
-    const item = JSON.parse(localStorage.getItem(key));
-    if (Date.now() > item.expires) {
+    const item = JSON.parse(localStorage.getItem(key) || 'null');
+    if (!item || Date.now() > item.expires) {
         localStorage.removeItem(key);
         return null;
     }
