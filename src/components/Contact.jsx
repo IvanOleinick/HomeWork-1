@@ -24,28 +24,74 @@ const Contact = () => {
     }, []);
 
     return (
-        <div className="container">
-            <form onSubmit={e => e.preventDefault()}>
+        <div className="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow space-y-4">
+            <form onSubmit={e => e.preventDefault()} className="space-y-4">
+                <div>
+                    <label htmlFor="fname" className="block text-sm font-medium text-gray-700">
+                        First Name
+                    </label>
+                    <input
+                        type="text"
+                        id="fname"
+                        name="firstname"
+                        placeholder="Your name.."
+                        className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    />
+                </div>
 
-                <label htmlFor="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+                <div>
+                    <label htmlFor="lname" className="block text-sm font-medium text-gray-700">
+                        Last Name
+                    </label>
+                    <input
+                        type="text"
+                        id="lname"
+                        name="lastname"
+                        placeholder="Your last name.."
+                        className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    />
+                </div>
 
-                <label htmlFor="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name.."/>
+                <div>
+                    <label htmlFor="planets" className="block text-sm font-medium text-gray-700">
+                        Planets
+                    </label>
+                    <select
+                        id="planets"
+                        name="planets"
+                        className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    >
+                        {planets.map((name, index) => (
+                            <option key={index} value={name}>
+                                {name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
 
-                <label htmlFor="planets">Planets</label>
-                <select className="planets" id="planets" name="planets">
-                    {planets.map((name, index) => (
-                        <option key={index} value={name}>{name}</option>
-                    ))}
-                </select>
+                <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                        Subject
+                    </label>
+                    <textarea
+                        id="subject"
+                        name="subject"
+                        placeholder="Write something.."
+                        rows="4"
+                        className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    ></textarea>
+                </div>
 
-                <label htmlFor="subject">Subject</label>
-                <textarea className="message" id="subject" name="subject" placeholder="Write something.."></textarea>
-
-                <input className="btn btn-danger mx-1" type="submit" value="Submit"/>
+                <div>
+                    <input
+                        type="submit"
+                        value="Submit"
+                        className="w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 transition"
+                    />
+                </div>
             </form>
         </div>
+
     );
 };
 

@@ -7,6 +7,7 @@ import friend6 from "../assets/friend6.jpg";
 import friend7 from "../assets/friend7.jpg";
 import friend8 from "../assets/friend8.jpg";
 import friend9 from "../assets/friend9.jpg";
+import {createContext} from "react";
 export const id_person = 1;
 export const tag_planets='planets'
 export const tag_base='v1'
@@ -57,3 +58,5 @@ export function loadCachedData(key) {
     }
     return item.value;
 }
+
+export const StarWarsContext =createContext();

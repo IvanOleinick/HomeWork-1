@@ -2,8 +2,8 @@ import hero from "/luke_skywalker.jpg";
 
 const Hero = () => {
     return (
-        <section className="float-start w-25 me-3">
-            <img className="w-100" src={hero} alt="Hero"/>
+        <section className="float-left w-1/4 me-4">
+            <img className="w-full shadow-hero " src={hero} alt="Hero"/>
         </section>
     );
 };

@@ -3,13 +3,13 @@ import {arrayImages} from "../utils/constants.js";
 
 const DreamTeam = () => {
     return (
-        <section className="float-end row w-50 border rounded-bottom-4 me-0 ms-2">
-            <h2 className="text-center">Dream team</h2>
+        <section className="float-right row w-1/2 border rounded-b-2xl mr-0 ml-2 grid grid-cols-3 gap-1">
+            <h2 className="text-center col-span-3 text-2xl">Dream team</h2>
             {arrayImages.map((item, index) => {
                 let extraClass = "";
 
-                if (index === 6) extraClass = "bottomLeft";
-                if (index === 8) extraClass = "bottomRight";
+                if (index === 6) extraClass = "rounded-bl-2xl";
+                if (index === 8) extraClass = "rounded-br-2xl";
 
                 return <Friends friend={item} className={extraClass} key={index}/>;
             })}

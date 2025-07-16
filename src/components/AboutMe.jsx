@@ -47,8 +47,8 @@ const AboutMe = () => {
     }
 
     return (
-        <div className="d-flex justify-content-between align-items-start">
-            <div className="farGalaxy">
+        <div className="flex justify-between items-start">
+            <div className="text-[1.7em] text-justify leading-[1.6]">
                 {Object.entries(aboutMe).map(([key, value]) => {
                     if (key === "image") return null;
 
@@ -63,8 +63,7 @@ const AboutMe = () => {
                     );
                 })}
             </div>
-
-            <img className="w-50" src={`/${aboutMe.image}`} alt={aboutMe.name}/>
+            <img className="w-1/2" src={`/${aboutMe.image}`} alt={aboutMe.name}/>
         </div>
     );
 };
